@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="homeee-page">
+    <header>
+        <h1>Blood Inventory</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donor.html">Donor Registration</a></li>
+            <li><a href="recipient.html">Recipient Registration</a></li>
+            <li><a href="inventory.html">Blood Inventory</a></li>
+            <li><a href="appointment.html">Appointment Scheduling</a></li>
+            <li><a href="admin.html">Admin Panel</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="content">
+            <h2>Blood Inventory</h2>
+            <div class="inventory-controls">
+                <input type="text" id="searchBar" placeholder="Search Blood Type">
+                <button onclick="searchInventory()">Search</button>
+                <button onclick="openAddUnitModal()">Add Unit</button>
+                <button onclick="openRemoveUnitModal()">Remove Unit</button>
+            </div>
+            <table >
+                <tr>
+                    <th>BLOOD TYPE</th>
+                    <th>AMOUNTS</th>
+                    <th>DATE</th>
+                    <th>DONOR NAME</th>
+                    <th>INCREMENT</th>
+                    <th>DECREMENT</th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td class="bold-text">A+</td>
+                        <td> <input id="units-A+" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-07-01</td>
+                        <td>Donor A</td>
+                        <td><button onclick="incrementUnitAp()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitAp()">DROP</button></td>
+                    </tr>
+
+                    <tr>
+                        <td class="bold-text">A-</td>
+                        <td> <input id="units-AN" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-10-05</td>
+                        <td>Donor B</td>
+                        <td><button onclick="incrementUnitAN()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitAN()">DROP</button></td>
+                    </tr>
+
+                    <tr>
+                        <td class="bold-text">B+</td>
+                        <td> <input id="units-BP" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-11-20</td>
+                        <td>Donor C</td>
+                        <td><button onclick="incrementUnitBP()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitBP()">DROP</button></td>
+                    </tr>
+
+                    <tr>
+                        <td class="bold-text">B-</td>
+                        <td> <input id="units-BN" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-11-22</td>
+                        <td>Donor D</td>
+                        <td><button onclick="incrementUnitBN()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitBN()">DROP</button></td>
+                    </tr>
+
+                    <tr>
+                        <td class="bold-text">AB+</td>
+                        <td> <input id="units-ABP" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-12-25</td>
+                        <td>Donor E</td>
+                        <td><button onclick="incrementUnitABP()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitABP()">DROP</button></td>
+                    </tr>
+
+                    <tr>
+                        <td class="bold-text">AB-</td>
+                        <td> <input id="units-ABN" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-12-25</td>
+                        <td>Donor F</td>
+                        <td><button onclick="incrementUnitABN()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitABN()">DROP</button></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="bold-text">O+</td>
+                        <td> <input id="units-OP" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-09-10</td>
+                        <td>Donor G</td>
+                        <td><button onclick="incrementUnitOP()">Add</button></td>
+                        <td><button style = "background-color: red;;"onclick="decrementUnitOP()">DROP</button></td>
+                    </tr>
+
+                    <tr>
+                        <td class="bold-text">O-</td>
+                        <td> <input id="units-ON" placeholder="0" style = "border:none;width:30px;margin:0 px"></td>
+                        <td>2024-08-15</td>
+                        <td>Donor H</td>
+                        <td><button onclick="incrementUnitON()">Add</button></td>
+                        <td><button style="background-color: red;" onclick="decrementUnitON()">DROP</button></td>
+                    </tr>
+                    
+                   
+                   
+                  
+                </tbody>
+            </table>
+        </section>
+        </div>
+        <!-- Modal for removing units -->
+        <div id="removeUnitModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeRemoveUnitModal()">&times;</span>
+                <h2>Remove Blood Unit</h2>
+                <form id="removeUnitForm">
+                    <label for="removeBloodType">Blood Type:</label>
+                    <input type="text" id="removeBloodType" name="bloodType" required>
+                    <label for="removeUnits">Units:</label>
+                    <input type="number" id="removeUnits" name="units" required>
+                    <button type="button" onclick="removeUnit()">Remove Unit</button>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

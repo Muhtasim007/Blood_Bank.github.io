@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Donor Management</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="donors.html">Donor Management</a></li>
+                <li><a href="recipients.html">Recipient Management</a></li>
+                <li><a href="inventory.html">Blood Inventory Management</a></li>
+                <li><a href="appointments.html">Appointment Management</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Reports & Analytics</a></li>
+                <li><a href="#">Access Control</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Audit Logs</a></li>
+                <li><a href="#">Backup & Restore</a></li>
+                <li><a href="admin.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <section class="admin-section content">
+            <h2>Blood Donor Registration Form</h2>
+            <div class="form-container">
+                <form id="donorForm">
+                    <h3>Personal Information:</h3>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" id="contactNumber" name="contactNumber" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <h3>Health Conditions:</h3>
+                    <label for="medicalConditions">Do you have any existing medical conditions?</label>
+                    <select id="medicalConditions" name="medicalConditions" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+
+                    <label for="medicalConditionsDetails">If yes, please specify:</label>
+                    <input type="text" id="medicalConditionsDetails" name="medicalConditionsDetails">
+
+                    <label for="allergies">Any known allergies?</label>
+                    <select id="allergies" name="allergies" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+
+                    <label for="allergiesDetails">If yes, list the allergies:</label>
+                    <input type="text" id="allergiesDetails" name="allergiesDetails">
+
+                    <label for="medications">Current medications:</label>
+                    <input type="text" id="medications" name="medications">
+
+                    <label for="bloodType">Blood Type:</label>
+                    <select id="bloodType" name="bloodType" required>
+                        <option value="">Select Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+
+                    <h3>Emergency Contact:</h3>
+                    <label for="emergencyContactName">Emergency Contact Name:</label>
+                    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+
+                    <label for="emergencyContactPhone">Emergency Contact Phone Number:</label>
+                    <input type="text" id="emergencyContactPhone" name="emergencyContactPhone" required>
+
+                    <h3>Consent:</h3>
+                    <label for="consent">I consent to donating blood and understand the process:</label>
+                    <select id="consent" name="consent" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+
+                    <button type="submit">Register Donor</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
